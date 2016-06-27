@@ -9,14 +9,15 @@
 body {
     margin: 0px;
     padding: 0px;
+    background-color: #000000;
 }
 </style>
 
 <body>
     <video id="firstvedio" controls="controls" style="width:100%; height:100%">
         <source src="https://ss0.bdstatic.com/y0s1hSulBw92lNKgpU_Z2jR7b2w6buu/data2/music/42662868/42662868.mp3?xcode=01e67278ee2fcd35c6826868de970894" type="video/mp4">
-        <!-- <source src="movie.mp4" type="video/mp4"> Your browser does not support the video tag. -->
     </video>
+    
 </body>
 
 </html>
@@ -27,8 +28,8 @@ $(function() {
     music.loop = true;
     music.currentTime = 130;
     music.play();
-
     music.addEventListener('timeupdate',function(){
+        if (music.currentTime < 130) {music.currentTime = 130};
         if (music.currentTime > 173 && isplay) {
             music.currentTime = 200;
             isplay = !isplay;
@@ -39,5 +40,5 @@ $(function() {
         console.log(music.currentTime);
     })
 });
-document.getElementById('firstvedio').play();
+
 </script>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.7/jquery.min.js"></script>
+</head>
+<style type="text/css">
+body {
+    margin: 0px;
+    padding: 0px;
+}
+</style>
+
+<body>
+    <video id="firstvedio" controls="controls" style="width:100%; height:100%">
+        <source src="https://ss0.bdstatic.com/y0s1hSulBw92lNKgpU_Z2jR7b2w6buu/data2/music/42662868/42662868.mp3?xcode=01e67278ee2fcd35c6826868de970894" type="video/ogg">
+        <source src="movie.mp4" type="video/mp4"> Your browser does not support the video tag.
+    </video>
+</body>
+
+</html>
+<script type="text/javascript">
+var music, isplay=true;
+$(function() {
+    music = document.getElementById('firstvedio');
+    music.play();
+    music.loop = true;
+    music.currentTime = 130;
+
+    music.addEventListener('timeupdate',function(){
+		if (music.currentTime > 173 && isplay) {
+			music.currentTime = 200;
+			isplay = !isplay;
+		}else if(!isplay && music.currentTime > 240){
+			music.currentTime = 130;
+			isplay = !isplay;
+		}
+		console.log(music.currentTime);
+	})
+});
+</script>

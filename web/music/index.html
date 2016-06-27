@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <script type="text/javascript" src="http://cdn.hcharts.cn/jquery/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript">
+
+    $(function() {
+
+    	$("#subm").on('click',function(event) {
+			var webhtml = $(".web").attr({src: 'http://music.163.com/#/search/m/?s=玫瑰花的葬礼'});
+			window.parent.location.href = "#";
+			console.log(document.getElementById('fweb').contentWindow.document);
+    		
+    	});
+    	
+    });
+    </script>
+    <style type="text/css">
+	.web{
+		display: none;
+	}
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="text" style="width:333" />
+    </div>
+    <br>
+    <input id="subm" type="submit" value="submit">
+
+    <iframe class="web" src="" id="fweb" name="fweb" scrolling="no" security="restricted" sandbox="allow-forms allow-scripts"></iframe>
+</body>
+
+</html>
